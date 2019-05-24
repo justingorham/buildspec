@@ -6,3 +6,6 @@ phases:
   build:
     commands:
       - node index
+artifacts:
+  files:
+    - '**/*'
