@@ -6,7 +6,8 @@ const execp = (...args) => new Promise((res, rej) => {
 });
 
 const theThing = async () => {
-    const result = await execp('git branch')
+    const { CODEBUILD_RESOLVED_SOURCE_VERSION } = process.env;
+    const result = await execp(`git branch -a --contains ${CODEBUILD_RESOLVED_SOURCE_VERSION}`)
     console.log(result);
 }
 
