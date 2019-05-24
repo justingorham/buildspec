@@ -10,7 +10,7 @@ const theThing = async () => {
     const { CODEBUILD_RESOLVED_SOURCE_VERSION } = process.env;
     const { stdout } = await execp(`git branch -a --contains ${CODEBUILD_RESOLVED_SOURCE_VERSION}`)
     const lines = stdout.split(EOL);
-    console.log(result);
+    console.log(lines);
 }
 
 theThing();
